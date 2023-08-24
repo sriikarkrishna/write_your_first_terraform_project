@@ -9,8 +9,6 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 terraform {
-  required_version = ">= 0.12"
-}
   backend "s3" {
     bucket         = "terraform_state"
     key            = "some_environment/terraform.tfstate"
@@ -19,8 +17,9 @@ terraform {
     kms_key_id     = "THE_ID_OF_THE_KMS_KEY"
     dynamodb_table = "terraform_lock"
   }
+  required_version = ">= 0.12"
 }
-
+  
 # ------------------------------------------------------------------------------
 # CONFIGURE OUR AWS CONNECTION
 # ------------------------------------------------------------------------------
